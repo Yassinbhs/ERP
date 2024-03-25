@@ -106,7 +106,7 @@ if action == "Stock":
 
                     # --------------------------------
                 # depense
-                existing_data_dep = conn.read(worksheet="Dépenses", usecols=list(range(15)), ttl=5)
+                existing_data_dep = conn.read(worksheet="Dépenses", usecols=list(range(6)), ttl=5)
                 existing_data_dep= existing_data_dep.dropna(how="all")
                 st.markdown("Dépenses")                    
                 if(len(existing_data_dep)>0):
@@ -895,7 +895,7 @@ elif action == "Ventes":
 
             
             st.markdown("**required*")
-            update_button = st.form_submit_button(label="Mettre à jour les détails sur le fournisseur")
+            update_button = st.form_submit_button(label="Mettre à jour les détails")
 
             if update_button:
                 if not product_name or not date or not mat_pre_1 or not quantite_1 :
@@ -1056,7 +1056,7 @@ elif action == "Ventes":
 
                 
          # na9sou mil quantité mta3 matiere premiere 
-                existing_data_mat_exist = conn.read(worksheet="Stock", usecols=list(range(8)), ttl=5)
+                existing_data_mat_exist = conn.read(worksheet="Stock", usecols=list(range(10)), ttl=5)
                 existing_data_mat_exist = existing_data_mat_exist.dropna(how="all")
                 try:
                 
@@ -1068,7 +1068,7 @@ elif action == "Ventes":
                 0
                 ]
                 # print("--------------pre_data_1[Quantité]------------\n",type(pre_data_1["Quantité"]),"\n--------quantite_1------------\n",type(quantite_1),"\n-----------")
-                
+                # print("------------------------\n",pre_data_1,"\n------------------------")
                 if(mat_1_to_update_id!=""):
                     existing_data_mat_exist.drop(
                         existing_data_mat_exist[
@@ -1524,7 +1524,7 @@ if action=="Ajouter Client":
                 # Create a new row of vendor data
                 if status=="Terminé":
                     # revenu
-                    existing_data_rev = conn.read(worksheet="Revenu", usecols=list(range(15)), ttl=5)
+                    existing_data_rev = conn.read(worksheet="Revenu", usecols=list(range(6)), ttl=5)
                     existing_data_rev= existing_data_rev.dropna(how="all")
                                      
                     if(len(existing_data_rev)>0):
