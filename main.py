@@ -2138,7 +2138,7 @@ if action == "Fiche d'argent":
         existing_data_res = conn.read(worksheet="Fiche d'argent", usecols=list(range(3)), ttl=5)
         existing_data_res = existing_data_res.dropna(how="all")
         st.markdown("Fiche d'argent")       
-        st.dataframe(existing_data_dep)
+        st.dataframe(existing_data_res)
     
         
             
