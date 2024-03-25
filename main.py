@@ -1539,7 +1539,7 @@ if action=="Ajouter Client":
                     [
                         {
                             "ID Vente":id_rev,
-                            "Montant": prix-prix_livraison,    
+                            "Montant": float(prix)-prix_livraison,    
                             "Source":Nom_client,                        
                             "Date": date.strftime("%Y-%m-%d")                           
                         }
