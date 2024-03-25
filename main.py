@@ -2006,7 +2006,7 @@ if action=="Dépenses":
         
         montant = st.text_input(label="Montant*")
         
-        source = st.text_input(label="Source*")
+        source = st.text_input(label="Destination*")
         date = st.date_input(label="Date*")
 
         num_fact = st.text_input(label="Numéro de facture")
@@ -2048,7 +2048,7 @@ if action=="Dépenses":
                 updated_df = pd.concat([existing_data_dep, revu_data], ignore_index=True)
 
                 # Update Google Sheets with the new vendor data
-                conn.update(worksheet="Revenu", data=updated_df)
+                conn.update(worksheet="Dépenses", data=updated_df)
 
                 st.success("Ajoutée avec succès.")
     # if(len(existing_data_dep)>0):
