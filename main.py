@@ -17,7 +17,8 @@ action = st.selectbox(
         "Ventes",
         "Fournisseurs",
         "Revenu",
-        "Dépenses"
+        "Dépenses",
+        "Fiche d'argent"
         
     ],
 )
@@ -2133,3 +2134,11 @@ if action=="Dépenses":
                     conn.update(worksheet="Revenu", data=updated_df)
                     st.success("Mise à jour avec succès !")
     st.dataframe(existing_data_dep)
+if action == "Fiche d'argent":
+        existing_data_res = conn.read(worksheet="Fiche d'argent", usecols=list(range(3)), ttl=5)
+        existing_data_res = existing_data_res.dropna(how="all")
+        st.markdown("Fiche d'argent")       
+        st.dataframe(existing_data_dep)
+    
+        
+            
