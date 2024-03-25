@@ -856,7 +856,7 @@ elif action == "Ventes":
             if(mat_pre_2!=""):
                 mat_pre_2_name=mat_pre_2.split(" - ")[1]
             else:
-                mat_pre_1_name=""
+                mat_pre_2_name=""
             mat_pre_3 = st.selectbox(
             "Matiére premier 3*", options=[""]+(existing_data_mat['ID'].astype(str) + ' - '+existing_data_mat["Nom du produit"]+ ' - '+existing_data_mat["Quantité"].astype(str)).tolist()
             )
