@@ -200,6 +200,7 @@ if action=="Décaissement d'argent (-)":
                 if update(dataDec,data_new,"Décaissement"):
                     st.success("Ajoutée avec succès.")
     if(len(dataDec)>0):
+        dataDec=readExcel("Décaissement",6)
         supprime(dataDec,"Décaissement")
         pre_data=updateForm(dataDec)
         with st.form(key="update_form"):
