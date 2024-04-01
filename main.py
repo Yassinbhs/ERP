@@ -124,6 +124,7 @@ if action=="Encaissement d'argent (+)":
                 if update(dataEnc,data_new,"Encaissement"):
                     st.success("Ajoutée avec succès.")
     if(len(dataEnc)>0):
+        dataEnc=readExcel("Encaissement",6)
         supprime(dataEnc,"Encaissement")
         pre_data=updateForm(dataEnc)
         with st.form(key="update_form"):
@@ -167,7 +168,7 @@ if action=="Encaissement d'argent (+)":
 
                
 if action=="Décaissement d'argent (-)":
-    dataDec=readExcel("Décaissement",5)
+    dataDec=readExcel("Décaissement",6)
     
     with st.form(key="Ajouter Décaissement"):
         
@@ -215,7 +216,7 @@ if action=="Décaissement d'argent (-)":
                     st.warning("Assurez-vous que tous les champs obligatoires sont remplis.")
                     st.stop()
                 else : 
-                    existing_data=readExcel("Décaissement",5)
+                    existing_data=readExcel("Décaissement",6)
                     existing_data.drop(
                         existing_data[
                             
